@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><input type="number" placeholder="Ingrese el número" id="id_number"></p>
+    <p id="id_link"></p>
+    <p><a id="id_link_app" href=""></a></p>
+
+    <button onclick="myFunction()">Aceptar</button> 
+    <script> 
+        function myFunction(){
+
+            var complemento = document.getElementById("id_number").value;
+            document.getElementById("id_link").innerHTML = document.getElementById("id_number").value;            
+            document.getElementById("id_link_app").innerHTML  = "Abrir en la aplicación"
+            document.getElementById("id_link_app").href = "https://api.whatsapp.com/send?phone=+57" + complemento;
+        }
+    </script>
+
+</body>
+</html>
