@@ -5,22 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <p><input type="number" placeholder="Ingrese el número" id="id_number"></p>
-    <p id="id_link"></p>
-    <p><a id="id_link_app" href=""></a></p>
+    <!-- Se define la etiqueta que contiene la página -->
+    <div id="container">
+        <header>
+            <h1>Conectar a whatsapp</h1>
+        </header>
+    <aside>
+        <div>
+            <h2>Escriba el número de celular</h2>
+            <p><input type="number" 
+                placeholder="Ingrese el número" 
+                id="id_number"
+                maxlength="10" 
+                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+                ></p>
+            <p id="id_link"></p>
+            <p><a id="id_link_app" href=""></a></p>
+            <button onclick="myFunction()">Aceptar</button> 
+        </div>
+    </aside>
 
-    <button onclick="myFunction()">Aceptar</button> 
-    <script> 
+
+
+    <footer>
+        MILTON CEBALLOS, WEB &copy; 2022
+    </footer>
+    
+
+    <script>
         function myFunction(){
-
             var complemento = document.getElementById("id_number").value;
-            document.getElementById("id_link").innerHTML = document.getElementById("id_number").value;            
-            document.getElementById("id_link_app").innerHTML  = "Abrir en la aplicación"
-            document.getElementById("id_link_app").href = "https://api.whatsapp.com/send?phone=+57" + complemento;
-        }
+            if (complemento.toString().length == 10){
+                document.getElementById("id_link").innerHTML = document.getElementById("id_number").value;            
+                document.getElementById("id_link_app").innerHTML  = "Abrir en la aplicación"
+                document.getElementById("id_link_app").href = "https://api.whatsapp.com/send?phone=+57" + complemento;
+            }
+        } 
     </script>
 
+    </div>
 </body>
 </html>

@@ -1,71 +1,26 @@
-<!-- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body>
+    <p><input type="number" placeholder="Ingrese el número" id="id_number"></p>
+    <p id="id_link"></p>
+    <p><a id="id_link_app" href=""></a></p>
 
-<h1>HTML DOM Events</h1>
-<h2>The onclick Event</h2>
-
-<p>Field1: <input type="text" id="field1" value="Hello World!"></p>
-<p>Field2: <input type="text" id="field2"></p>
-
-<p>Clicking "Copy" triggers a function that copies the text value from Field1 to Field2.</p>
-
-<button onclick="myFunction()">Copy</button>
-
-<h1 id="h11"> </h1>
-
-<script>
-function myFunction() {
-  document.getElementById("field2").value = document.getElementById("field1").value;
-  document.getElementById("h11").value = document.getElementById("field1").value;
-}
-</script>
+    <button onclick="myFunction()">Aceptar</button> 
+    
+    <script> 
+        function myFunction(){
+            var complemento = document.getElementById("id_number").value;
+            document.getElementById("id_link").innerHTML = document.getElementById("id_number").value;            
+            document.getElementById("id_link_app").innerHTML  = "Abrir en la aplicación"
+            document.getElementById("id_link_app").href = "https://api.whatsapp.com/send?phone=+57" + complemento;
+        }
+    </script>
 
 </body>
-</html> -->
-
-
-
-<!-- <script> 
-    // Ejemplo 1
-    document.write("Bienvenido a mi sitio web. Gracias...");
-    // Ejemplo 2
-    document.write('<a href=\"http://3con14.pro\">Enlace a una página</a>');
-    // Ejemplo 3
-    document.write(new Date());
-    // Ejemplo 4
-    document.write('Ancho de pantalla: '+ screen.width +' pixeles');
-    // Ejemplo 5
-    document.write('Ultima modificacion: '+ window.document.lastModified);
-    // Ejemplo 6
-    document.write('Usando el navegador: '+ navigator.appName);
-    </script>
-    // Ejemplo 7
-    window.onload = document.write('<img src=\"grande.jpg\" alt=\"miImagen\" />');
-    
-     -->
-
-
-
-
-
-
-
-
-     
-
-<!-- Un ejemplo -->
-document.getElementById("demo").innerHTML = "Esto es un párrafo de ejemplo";
-<!-- Otro ejempplo -->
-<p id="parrafo1">Esto es el texto del párrafo 1</p>
-<button onclick="mostrar()"> Pulsa </button>
-<p id="parrafo2"></p>
-<script>
-function mostrar() {
-    var x = document.getElementById("parrafo1").innerHTML;
-    document.getElementById("parrafo2").innerHTML = x;
-}
-</script>
-
-
-
+</html>

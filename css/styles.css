@@ -1,6 +1,48 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: lightgray;
+    /* Cambiamos el estilo de la fuente del texto */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container{
+    /* Aqui van las diferentes propiedades del CSS */
+
+    /* El archo se lo puede definir en porcentaje o pixeles */
+    width: 70%;
+    /* Define el margen */
+    margin: 0px auto;
+    /* define el borde */
+    border: 1px solid black;
+}
+
+header{
+    background: rgb(7, 94, 84);
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    line-height: 90px;
+    border-bottom: 1px dashed black;
+}
 
 
+aside{
+    min-height: 500px;
+    line-height: 100px;
+    align-items: center;
+    text-align: center;
+}
 
-
+footer{
+    background: rgb(7, 94, 84);
+    color: black;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
 
 
